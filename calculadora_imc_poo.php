@@ -15,9 +15,17 @@ class Pessoa
         $this->imc = $this->calcularImc();  
     }
 
-    function calcularImc()
+    function calcularImc(): float
     {
-        return number_format( $this->peso / ($this->altura * $this->altura), 2, ',', '.');
+        return $this->peso / ($this->altura * $this->altura);
+    }
+
+    function exibirIMC(): string 
+    {
+        $imc_formatado = number_format($this->imc, 2, ',', '.');
+        return "O IMC de {$this->nome} é {$imc_formatado}";
+        // variavel da classe coloca this
+        // variavel local pode colocar direto
     }
 } 
 
@@ -25,6 +33,6 @@ $roberto = new Pessoa ('Roberto', 90, 1.72);
 $renan = new Pessoa ('Renan', 100, 1.73);
 $amanda = new Pessoa ('Amanda', 60, 1.70);
 
-echo "O valor do IMC do $roberto->nome é $roberto->imc. <br>"; 
-echo "O valor do IMC do $renan->nome é $renan->imc. <br>"; 
-echo "O valor do IMC da $amanda->nome é $amanda->imc. <br>"; 
+echo $roberto->exibirIMC(). "<br>"; 
+echo $renan->exibirIMC(). "<br>"; 
+echo $amanda->exibirIMC(). "<br>"; 

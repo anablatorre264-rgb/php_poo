@@ -1,12 +1,28 @@
 <?php
-
+$nome = 'Amanda';
 $peso = 70;
 $altura = 1.65;
 $imc = number_format($peso / ($altura * $altura), 2, ',', '.');
+// $imc = $peso / ($altura * $altura);
 
-// if { $imc < 18.5 = echo 'Baixo do Peso'
-// } else { 
-//      $imc => 18.5 = echo 'Baixo do Peso'
+// if ($imc < 18.5) {
+//     $classificacao = "Baixo peso";
+// } elseif ($imc < 25) {
+//     $classificacao = "Peso normal";
+// } elseif ($imc < 30) {
+//     $classificacao = "Sobrepeso";
+// } elseif ($imc < 35) {
+//     $classificacao = "Obesidade grau 1";
+// } elseif ($imc < 40) {
+//     $classificacao = "Obesidade grau 2";
+// } else {
+//     $classificacao = "Obesidade grau 3";
 // }
 
-echo "O valor do IMC é $imc. <br>";
+// $imc_formatado = number_format($imc, 2, ',', '.');
+
+
+echo "O valor do IMC da $nome é $imc. <br>";
+
+// echo "O valor do IMC da $nome é $imc_formatado. <br>";
+// echo "O seu IMC está detectando $classificacao. <br>";
