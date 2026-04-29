@@ -40,3 +40,33 @@ class Circunferencia extends FiguraGeometrica{
         return 2 * 3.14 * $this->raio;
     }
 }
+
+class Retangulo extends FiguraGeometrica{
+    private $lado1;
+    private $lado2;
+
+    public function __construct($tipo, $lado1, $lado2)
+    {
+        parent::__construct($tipo);
+        $this->lado1 = $lado1;
+        $this->lado2 = $lado2;
+    }
+
+    public function area()
+    {
+        return $this->lado1 * $this->lado2;
+    }
+
+    public function perimetro()
+    {
+        return (2 * $this->lado1) + (2 * $this->lado2);
+    }
+
+}
+
+$circ = new Circunferencia("Circunferência", 10);
+$circ->printCaracteristicas();
+
+$retangulo = new Retangulo("Retangulo", 10, 20);
+$retangulo->printCaracteristicas();
+// mostra como tá dentro do objeto.
